@@ -58,38 +58,39 @@ header( 'Content-Type: application/xml' );
 		<Account>
 			<AccountType>email</AccountType>
 			<Action>settings</Action>
-			<Protocol>
-				<Type>POP3</Type>
-				<Server><?php echo $popServer; ?></Server>
-				<Port><?php echo $popPort; ?></Port>
-				<LoginName><?php echo $email[1]; ?></LoginName>
-				<DomainRequired>off</DomainRequired>
-				<SPA>off</SPA>
-				<SSL><?php echo $popSSL ? 'on' : 'off'; ?></SSL>
-				<DomainRequired>off</DomainRequired>
-			</Protocol>
-			<Protocol>
-				<Type>IMAP</Type>
-				<Server><?php echo $imapServer; ?></Server>
-				<Port><?php echo $imapPort; ?></Port>
-				<DomainRequired>off</DomainRequired>
-				<LoginName><?php echo $email[1]; ?></LoginName>
-				<SPA>off</SPA>
-				<SSL><?php echo $imapSSL ? 'on' : 'off'; ?></SSL>
-				<AuthRequired>on</AuthRequired>
-			</Protocol>
-			<Protocol>
-				<Type>SMTP</Type>
-				<Server><?php echo $smtpServer; ?></Server>
-				<Port><?php echo $smtpPort; ?></Port>
-				<DomainRequired>off</DomainRequired>
-				<LoginName><?php echo $email[1]; ?></LoginName>
-				<SPA>off</SPA>
-				<SSL><?php echo $smtpSSL ? 'on' : 'off'; ?></SSL>
-				<AuthRequired>on</AuthRequired>
-				<UsePOPAuth>on</UsePOPAuth>
-				<SMTPLast>on</SMTPLast>
-			</Protocol>
+                        <Protocol>
+                                <Type>IMAP</Type>
+                                <Server><?php echo $imapServer; ?></Server>
+                                <Port><?php echo $imapPort; ?></Port>
+                                <DomainRequired>off</DomainRequired>
+                                <LoginName><?php echo $email[1]; ?></LoginName>
+                                <SPA>off</SPA>
+                                <SSL><?php echo $imapSSL ? 'on' : 'off'; ?></SSL>
+                                <AuthRequired>on</AuthRequired>
+                        </Protocol>
+                        <Protocol>
+                                <Type>POP3</Type>
+                                <Server><?php echo $popServer; ?></Server>
+                                <Port><?php echo $popPort; ?></Port>
+                                <LoginName><?php echo $email[1]; ?></LoginName>
+                                <DomainRequired>off</DomainRequired>
+                                <SPA>off</SPA>
+                                <SSL><?php echo $popSSL ? 'on' : 'off'; ?></SSL>
+                                <DomainRequired>off</DomainRequired>
+                        </Protocol>
+                        <Protocol>
+                                <Type>SMTP</Type>
+                                <Server><?php echo $smtpServer; ?></Server>
+                                <Port><?php echo $smtpPort; ?></Port>
+                                <DomainRequired>off</DomainRequired>
+                                <LoginName><?php echo $email[1]; ?></LoginName>
+                                <SPA>off</SPA>
+                                <SSL><?php echo $smtpSSL ? 'on' : 'off'; ?></SSL>
+                                <Encryption>tls</Encryption>
+                                <AuthRequired>on</AuthRequired>
+                                <UsePOPAuth>off</UsePOPAuth>
+                                <SMTPLast>off</SMTPLast>
+                        </Protocol>
 		</Account>
 	</Response>
 </Autodiscover>
